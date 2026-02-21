@@ -48,9 +48,4 @@ I am an **Informatics** student at **Universitas Ahmad Dahlan** with a passion f
 
 ---
 
-### 📫 Connect with me:
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fajar-irwansah)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fajarirwansah15@gmail.com)
-[![Roblox](https://img.shields.io/badge/Roblox-%2324292e.svg?style=for-the-badge&logo=roblox&logoColor=white)](https://www.roblox.com/users/YOUR_ID/profile)
-
 *"Logic will get you from A to B. Imagination will take you everywhere."*
