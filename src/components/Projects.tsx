@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: "EcoDigital Nusantara",
-    description: "Mobile-first responsive design for a local business.",
+    description: "No description found.",
     image: "/img/EcoDigital.png",
     tags: ["React", "Tailwind", "Vite"],
     link: "https://ecodigitalnusantara.vercel.app/",
