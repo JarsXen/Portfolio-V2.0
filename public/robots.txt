@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://fajarirwansah.github.io/sitemap.xml
+Sitemap: https://fajar-irwansah.vercel.app/sitemap.xml
