@@ -24,7 +24,7 @@ export const translations = {
       semester: 'Semester 2',
       journey: 'My Journey',
       journeyDesc1: 'As a second-semester student, I am building my foundation in programming and software development. I love exploring new technologies and applying them to solve real-world problems.',
-      journeyDesc2: 'My goal is to become a proficient Front End Developer and contribute to open-source projects.',
+      journeyDesc2: 'My goal is to become a proficient Full Stack Developer and contribute to open-source projects.',
     },
     projects: {
       title: 'My Projects',
@@ -69,7 +69,7 @@ export const translations = {
       semester: 'Semester 2',
       journey: 'Perjalanan Saya',
       journeyDesc1: 'Sebagai mahasiswa semester dua, saya sedang membangun fondasi dalam pemrograman dan pengembangan perangkat lunak. Saya suka mengeksplorasi teknologi baru dan menerapkannya untuk memecahkan masalah dunia nyata.',
-      journeyDesc2: 'Tujuan saya adalah menjadi Front End Developer yang mahir dan berkontribusi pada proyek open-source.',
+      journeyDesc2: 'Tujuan saya adalah menjadi Full Stack Developer yang mahir dan berkontribusi pada proyek open-source.',
     },
     projects: {
       title: 'Proyek Saya',
