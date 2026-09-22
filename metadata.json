@@ -1,0 +1,6 @@
+{
+  "name": "Fajar Irwansah Portfolio v2.0",
+  "description": "Modern, minimalist, and responsive portfolio for Fajar Irwansah, AI Engineer and Informatics student at Universitas Bina Sarana Informatika.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

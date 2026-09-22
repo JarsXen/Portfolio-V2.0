@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fajar-irwansah.vercel.app/sitemap.xml
