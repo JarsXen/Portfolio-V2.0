@@ -19,8 +19,12 @@ export default function ScrollProgress() {
       {/* Animated progress indicator */}
       <motion.div
         id="scroll-progress-bar"
-        style={{ scaleX }}
-        className="h-full w-full bg-gradient-to-r from-indigo-500 via-violet-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 origin-left shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+        style={{
+          scaleX,
+          background: 'linear-gradient(to right, var(--accent-from), var(--accent-via), var(--accent-to))',
+          boxShadow: '0 0 10px var(--accent-glow)',
+        }}
+        className="h-full w-full origin-left transition-[background,box-shadow] duration-300"
       />
     </div>
   );

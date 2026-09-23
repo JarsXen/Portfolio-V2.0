@@ -35,6 +35,8 @@ export default function About() {
                   <img 
                     src="/img/fajar.png" 
                     alt="Fajar Irwansah" 
+                    width={256}
+                    height={320}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                     loading="lazy"
@@ -100,8 +102,6 @@ export default function About() {
               </div>
             </div>
           </div>
-
-          {/* Academic & Learning Timeline */}
           <Timeline />
         </motion.div>
       </div>

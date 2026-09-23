@@ -196,6 +196,8 @@ function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
           <img 
             src={project.image} 
             alt={project.title}
+            width={600}
+            height={338}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             referrerPolicy="no-referrer"
             loading="lazy"

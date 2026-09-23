@@ -7,13 +7,21 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import SettingsToggle from './components/SettingsToggle';
 import ScrollProgress from './components/ScrollProgress';
-import { AppProvider } from './contexts/AppContext';
+import { ScrollToTop } from './components/ScrollToTop';
+import { PresentationMode } from './components/PresentationMode';
+import ShareModal from './components/ShareModal';
+import { AppProvider, useApp } from './contexts/AppContext';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { AnimatePresence } from 'motion/react';
 
 // Code-splitting for non-critical views
 const AllCertificates = lazy(() => import('./components/AllCertificates'));
 const NotFound = lazy(() => import('./components/NotFound'));
+
+function ShareModalWrapper() {
+  const { isShareOpen, closeShare } = useApp();
+  return <ShareModal isOpen={isShareOpen} onClose={closeShare} />;
+}
 
 function LazyLoader() {
   return (
@@ -99,9 +107,12 @@ export default function App() {
 
   return (
     <AppProvider>
-      <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen text-zinc-900 dark:text-white selection:bg-indigo-500/30 transition-colors duration-300 overflow-x-hidden">
+      <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen text-zinc-900 dark:text-white selection:bg-[var(--accent-subtle)] transition-colors duration-300 overflow-x-hidden">
         <ScrollProgress />
         <SettingsToggle />
+        <ScrollToTop />
+        <PresentationMode />
+        <ShareModalWrapper />
         <AnimatePresence mode="wait">
           {isInvalidPath ? (
             <Suspense fallback={<LazyLoader />}>

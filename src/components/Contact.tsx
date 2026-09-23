@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-import { Instagram, Twitter, Linkedin, Mail, Github } from 'lucide-react';
+import { Instagram, Twitter, Linkedin, Mail, Github, QrCode } from 'lucide-react';
 import { ReactNode } from 'react';
 import { useApp } from '../contexts/AppContext';
+import { VisitorFooterStats } from './VisitorStats';
 
 const TikTok = ({ size = 24, className = "" }) => (
   <svg
@@ -21,7 +22,7 @@ const TikTok = ({ size = 24, className = "" }) => (
 );
 
 export default function Contact() {
-  const { t } = useApp();
+  const { t, openShare } = useApp();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -53,7 +54,23 @@ export default function Contact() {
             <SocialLink href="mailto:fajarirwansah15@gmail.com" icon={<Mail size={24} />} label="Email" color="hover:text-emerald-500 dark:hover:text-emerald-400" />
           </div>
 
-          <footer className="mt-24 pt-8 border-t border-zinc-200 dark:border-white/10 text-zinc-500 text-sm">
+          {/* Share Portfolio / QR Code Action Button */}
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={openShare}
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-medium text-sm shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all group cursor-pointer"
+            >
+              <QrCode size={18} className="group-hover:rotate-12 transition-transform text-indigo-400 dark:text-indigo-600" />
+              <span>{t.share.buttonTitle} / QR Code</span>
+            </button>
+          </div>
+
+          {/* Visitor Counter Badge */}
+          <div className="flex justify-center">
+            <VisitorFooterStats />
+          </div>
+
+          <footer className="mt-12 pt-8 border-t border-zinc-200 dark:border-white/10 text-zinc-500 text-sm">
             <p>{t.contact.footer.replace('{year}', currentYear.toString())}</p>
           </footer>
         </motion.div>

@@ -4,7 +4,7 @@ import { useRef, useState, useEffect, useMemo, useCallback } from 'react';
 import { useApp } from '../contexts/AppContext';
 
 export default function Navigation() {
-  const { t } = useApp();
+  const { t, isPresentationOpen } = useApp();
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,34 +21,27 @@ export default function Navigation() {
   );
 
   useEffect(() => {
-    let ticking = false;
-
-    const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      for (const item of navItems) {
-        const section = document.getElementById(item.id);
-        if (section) {
-          const { offsetTop, offsetHeight } = section;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(item.id);
-            break;
-          }
+    if (isPresentationOpen) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find visible section
+        const intersecting = entries.find(entry => entry.isIntersecting);
+        if (intersecting) {
+          setActiveSection(intersecting.target.id);
         }
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0,
       }
-      ticking = false;
-    };
+    );
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveSection);
-        ticking = true;
-      }
-    };
+    navItems.forEach(item => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    updateActiveSection();
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => observer.disconnect();
   }, [navItems]);
 
   const scrollToSection = useCallback((id: string) => {
@@ -59,6 +52,8 @@ export default function Navigation() {
       setIsMobileMenuOpen(false);
     }
   }, []);
+
+  if (isPresentationOpen) return null;
 
   return (
     <>
@@ -161,6 +156,7 @@ function DockIcon({ mouseX, icon: Icon, isActive }: { mouseX: any, icon: any, is
   const ref = useRef<HTMLDivElement>(null);
 
   const distance = useTransform(mouseX, (val: number) => {
+    if (!Number.isFinite(val)) return 1000;
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });

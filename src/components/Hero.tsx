@@ -50,27 +50,27 @@ export default function Hero() {
         className="relative z-10 text-center px-4 max-w-4xl mx-auto transform-gpu"
       >
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.9, opacity: 0.9 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="mb-6 inline-block"
         >
           <LiveClock />
         </motion.div>
         
         <motion.h1 
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 12, opacity: 0.9 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-500 dark:from-white dark:via-white dark:to-white/50"
         >
           FAJAR IRWANSAH
         </motion.h1>
 
         <motion.p 
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 12, opacity: 0.9 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-light"
         >
           {t.hero.role} <span className="text-zinc-900 dark:text-white font-medium">{t.hero.university}</span>.

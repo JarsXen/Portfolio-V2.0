@@ -95,6 +95,8 @@ function CertificateCard({ cert, index }: { cert: any, index: number }) {
           <img 
             src={cert.thumbnail} 
             alt={cert.title} 
+            width={400}
+            height={300}
             className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
             referrerPolicy="no-referrer"
             loading="lazy"
